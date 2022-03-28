@@ -8,6 +8,8 @@ shared:
     
 jobs:
   main:
+    annotations:
+      screwdriver.cd/manualStartEnabled: false
     requires: [ ~commit, ~pr ]
     steps:
       - show: |
