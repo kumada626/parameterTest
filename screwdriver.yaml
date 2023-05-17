@@ -4,7 +4,7 @@ parameters:
     description: "Region setting"
 
 shared:
-  image: node:14
+  image: node:18
     
 jobs:
   main:
@@ -21,5 +21,11 @@ jobs:
           echo "Region: $(meta get parameters.region.value)"
   join:
     requires: [ main, detached ]
+    steps:
+      - echo: echo hi
+  disabled-check:
+    requires: ~pr
+    annotations:
+      screwdriver.cd/jobDisabledByDefault: true
     steps:
       - echo: echo hi
