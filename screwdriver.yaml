@@ -1,10 +1,5 @@
-parameters:
-  region:
-    value: "foo"
-    description: "Region setting"
-
 shared:
-  image: node:14
+  image: node:20
     
 jobs:
   main:
@@ -15,6 +10,10 @@ jobs:
       - show: |
           echo "Region: $(meta get parameters.region.value)"
   detached:
+    parameters:
+      region:
+        value: "foo"
+        description: "Region setting"
     requires: [ ~commit, ~pr ]
     steps:
       - show: |
