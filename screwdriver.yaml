@@ -1,1 +1,6 @@
 template: adong/sd-job-template-builder@1.0.5
+shared:
+  settings:
+    slack:
+      channels::
+        - notifications-test
