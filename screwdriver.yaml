@@ -7,6 +7,7 @@ jobs:
       screwdriver.cd/manualStartEnabled: false
     requires: [ ~commit, ~pr ]
     steps:
+      - test: echo $SCM_URL
       - show: |
           echo "Region: $(meta get parameters.region.value)"
   detached:
