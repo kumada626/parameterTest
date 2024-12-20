@@ -3,22 +3,14 @@ shared:
     
 jobs:
   main:
-    annotations:
-      screwdriver.cd/manualStartEnabled: false
-    requires: [ ~commit, ~pr ]
-    steps:
-      - show: |
-          echo "Region: $(meta get parameters.region.value)"
-  detached:
     parameters:
       region:
         value: "foo"
         description: "Region setting"
+    annotations:
     requires: [ ~commit, ~pr ]
     steps:
-      - show: |
-          echo "Region: $(meta get parameters.region.value)"
-  join:
-    requires: [ main, detached ]
-    steps:
-      - echo: echo hi
+      - meta-get: |
+          meta get test.hoge
+          meta get parameters.region.value
+          meta set test.hoge 'foooooo'
