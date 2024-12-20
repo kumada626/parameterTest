@@ -7,7 +7,6 @@ jobs:
       region:
         value: "foo"
         description: "Region setting"
-    annotations:
     requires: [ ~commit, ~pr ]
     steps:
       - meta-get: |
