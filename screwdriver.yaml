@@ -7,12 +7,15 @@ jobs:
       region:
         value: "foo"
         description: "Region setting"
+      prpram:
+        value: "Add in PR Job"
     requires: [ ~commit, ~pr ]
     steps:
       - meta-get: |
           meta get test.hoge
           meta get parameters.region.value
           meta set test.hoge 'foooooo'
+          meta get parameters.prpram.value
 
   prclosed-test:
     parameters:
