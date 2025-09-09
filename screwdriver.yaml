@@ -13,3 +13,16 @@ jobs:
           meta get test.hoge
           meta get parameters.region.value
           meta set test.hoge 'foooooo'
+
+  prclosed-test:
+    parameters:
+      foo:
+        value: "FOO"
+        description: "job pram"
+      bar: "BAR"
+    requires: [ ~pr-closed ]
+    steps:
+      - get-param: |
+          echo "param1: $(meta get parameters.foo.value)"
+          echo "param2: $(meta get parameters.bar.value)"
+          echo "PR-closed: $(meta get sd.pr.merged)"
