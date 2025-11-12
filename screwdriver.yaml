@@ -3,6 +3,7 @@ shared:
     
 jobs:
   main:
+    image: nodeee:20
     parameters:
       region:
         value: "foo"
