@@ -3,7 +3,7 @@ shared:
     
 jobs:
   main:
-    image: nodeee:20
+    image: node:20
     parameters:
       region:
         value: "foo"
@@ -14,6 +14,10 @@ jobs:
           meta get test.hoge
           meta get parameters.region.value
           meta set test.hoge 'foooooo'
+  domain:
+    requires: ~pr
+    steps:
+      - echo: echo foo
 
   prclosed-test:
     parameters:
