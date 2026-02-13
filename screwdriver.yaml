@@ -8,7 +8,7 @@ jobs:
       region:
         value: "foo"
         description: "Region setting"
-    requires: [ ~commit, ~pr ]
+    requires: [ ~pr ]
     steps:
       - meta-get: |
           meta get test.hoge
