@@ -27,3 +27,4 @@ jobs:
           echo "param1: $(meta get parameters.foo.value)"
           echo "param2: $(meta get parameters.bar.value)"
           echo "PR-closed: $(meta get sd.pr.merged)"
+          echo FOOOO
